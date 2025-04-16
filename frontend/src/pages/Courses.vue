@@ -33,12 +33,7 @@
 					:buttons="courseTabs"
 					v-model="currentTab"
 				/>
-				<FormControl
-					v-model="certification"
-					:label="__('Certification')"
-					type="checkbox"
-					@change="updateCourses()"
-				/>
+				
 				<div class="grid grid-cols-2 gap-2">
 					<FormControl
 						v-model="title"
