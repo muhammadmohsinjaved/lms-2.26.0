@@ -1055,10 +1055,10 @@ def update_course_filters(filters):
 		filters.update({"name": ["in", created_courses]})
 		del filters["created"]
 
-	if filters.get("live"):
+	if filters.get("Catalogue"):
 		filters.update({"featured": 0})
 		show_featured = True
-		del filters["live"]
+		del filters["Catalogue"]
 
 	if filters.get("certification"):
 		or_filters.update({"enable_certification": 1})
@@ -1188,7 +1188,7 @@ def get_course_details(course):
 
 
 def get_categorized_courses(courses):
-	live, upcoming, new, enrolled, created, under_review = [], [], [], [], [], []
+	Catalogue, upcoming, new, enrolled, created, under_review = [], [], [], [], [], []
 
 	for course in courses:
 		if course.status == "Under Review":
@@ -1196,7 +1196,7 @@ def get_categorized_courses(courses):
 		elif course.published and course.upcoming:
 			upcoming.append(course)
 		elif course.published:
-			live.append(course)
+			Catalogue.append(course)
 
 		if (
 			course.published
@@ -1210,14 +1210,14 @@ def get_categorized_courses(courses):
 		elif course.is_instructor:
 			created.append(course)
 
-		categories = [live, enrolled, created]
+		categories = [Catalogue, enrolled, created]
 		for category in categories:
 			category.sort(key=lambda x: cint(x.enrollments), reverse=True)
 
-		live.sort(key=lambda x: x.featured, reverse=True)
+		Catalogue.sort(key=lambda x: x.featured, reverse=True)
 
 	return {
-		"live": live,
+		"Catalogue": Catalogue,
 		"new": new,
 		"upcoming": upcoming,
 		"enrolled": enrolled,

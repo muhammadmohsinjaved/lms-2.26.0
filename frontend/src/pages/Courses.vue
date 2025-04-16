@@ -119,7 +119,7 @@ const currentCategory = ref(null)
 const title = ref('')
 const certification = ref(false)
 const filters = ref({})
-const currentTab = ref('Live')
+const currentTab = ref('Catalogue')
 
 onMounted(() => {
 	setFiltersFromQuery()
@@ -202,7 +202,7 @@ const updateTabFilter = () => {
 		return
 	}
 
-	delete filters.value['live']
+	delete filters.value['Catalogue']
 	delete filters.value['created']
 	delete filters.value['published_on']
 	delete filters.value['upcoming']
@@ -214,10 +214,10 @@ const updateTabFilter = () => {
 		delete filters.value['published']
 		delete filters.value['enrolled']
 
-		if (currentTab.value == 'Live') {
+		if (currentTab.value == 'Catalogue') {
 			filters.value['published'] = 1
 			filters.value['upcoming'] = 0
-			filters.value['live'] = 1
+			filters.value['Catalogue'] = 1
 		} else if (currentTab.value == 'Upcoming') {
 			filters.value['upcoming'] = 1
 			filters.value['published'] = 1
@@ -292,7 +292,7 @@ const courseType = computed(() => {
 const courseTabs = computed(() => {
 	let tabs = [
 		{
-			label: __('Live'),
+			label: __('Catalogue'),
 		},
 		{
 			label: __('New'),
