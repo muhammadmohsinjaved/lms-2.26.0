@@ -19,9 +19,6 @@ def add_pages_to_nav():
 	pages = [
 		{"label": "Explore", "idx": 1},
 		{"label": "Courses", "url": "/lms/courses", "parent": "Explore", "idx": 2},
-		{"label": "Batches", "url": "/lms/batches", "parent": "Explore", "idx": 3},
-		{"label": "Statistics", "url": "/lms/statistics", "parent": "Explore", "idx": 4},
-		{"label": "Jobs", "url": "/lms/job-openings", "parent": "Explore", "idx": 5},
 	]
 
 	for page in pages:
