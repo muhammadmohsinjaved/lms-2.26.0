@@ -216,12 +216,6 @@ const updateTabFilter = () => {
 		} else if (currentTab.value == 'Upcoming') {
 			filters.value['upcoming'] = 1
 			filters.value['published'] = 1
-		} else if (currentTab.value == 'New') {
-			filters.value['published'] = 1
-			filters.value['published_on'] = [
-				'>=',
-				dayjs().add(-3, 'month').format('YYYY-MM-DD'),
-			]
 		} else if (currentTab.value == 'Created') {
 			filters.value['created'] = 1
 		}
@@ -288,9 +282,6 @@ const courseTabs = computed(() => {
 	let tabs = [
 		{
 			label: __('Catalogue'),
-		},
-		{
-			label: __('New'),
 		},
 		{
 			label: __('Upcoming'),
