@@ -17,8 +17,7 @@ def after_sync():
 
 def add_pages_to_nav():
 	pages = [
-		{"label": "Explore", "idx": 1},
-		{"label": "Courses", "url": "/lms/courses", "parent": "Explore", "idx": 2},
+		
 	]
 
 	for page in pages:
