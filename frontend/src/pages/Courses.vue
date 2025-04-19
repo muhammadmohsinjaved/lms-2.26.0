@@ -7,9 +7,6 @@
 		<div v-if="user.data?.is_moderator" class="flex gap-2 mt-2">
 		<a href="https://www.mari.petconlms.com/app">
 			<Button variant="outline">
-				<template #prefix>
-					<Home class="h-4 w-4 stroke-1.5" />
-				</template>
 				{{ __('Go to Desk') }}
 			</Button>
 		</a>
@@ -19,7 +16,7 @@
 				<template #prefix>
 					<Plus class="h-4 w-4 stroke-1.5" />
 				</template>
-				{{ __('New') }}
+				{{ __('New new Course') }}
 			</Button>
 		</router-link>
 	</div>
