@@ -3,8 +3,15 @@
 		class="sticky flex items-center justify-between top-0 z-10 border-b bg-surface-white px-3 py-2.5 sm:px-5"
 	>
 		<Breadcrumbs :items="breadcrumbs" />
+		<Button variant="solid" @click="goToDesk" v-if="canCreateCourse()" class="mr-4">
+			<template #prefix>
+			</template>
+			{{ __('Go to Desk') }}
+		</Button>
+
+		<!-- New Course Button inside router-link -->
 		<router-link
-			v-if="user.data?.is_moderator"
+			v-if="canCreateCourse()"
 			:to="{
 				name: 'CourseForm',
 				params: { courseName: 'new' },
@@ -14,7 +21,7 @@
 				<template #prefix>
 					<Plus class="h-4 w-4 stroke-1.5" />
 				</template>
-				{{ __('New') }}
+				{{ __('New Course') }}
 			</Button>
 		</router-link>
 	</header>
