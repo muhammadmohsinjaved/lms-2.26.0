@@ -3,6 +3,15 @@
 		class="sticky flex items-center justify-between top-0 z-10 border-b bg-surface-white px-3 py-2.5 sm:px-5"
 	>
 		<Breadcrumbs :items="breadcrumbs" />
+
+		<router-link v-if="user.data?.is_moderator" to="/app">
+			<Button variant="outline">
+				<template #prefix>
+					<Home class="h-4 w-4 stroke-1.5" />
+				</template>
+				{{ __('Go to Desk') }}
+			</Button>
+		</router-link>
 		<router-link
 			v-if="user.data?.is_moderator"
 			:to="{
@@ -10,7 +19,7 @@
 				params: { courseName: 'new' },
 			}"
 		>
-			<Button variant="solid">
+			<Button variant="solid" class="mr-2">
 				<template #prefix>
 					<Plus class="h-4 w-4 stroke-1.5" />
 				</template>
@@ -33,7 +42,7 @@
 					:buttons="courseTabs"
 					v-model="currentTab"
 				/>
-				
+
 				<div class="grid grid-cols-2 gap-2">
 					<FormControl
 						v-model="title"
