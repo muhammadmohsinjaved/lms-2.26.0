@@ -4,28 +4,25 @@
 	>
 		<Breadcrumbs :items="breadcrumbs" />
 
-		<router-link v-if="user.data?.is_moderator" to="/app">
+		<div v-if="user.data?.is_moderator" class="flex gap-2 mt-2">
+		<a href="https://www.mari.petconlms.com/app">
 			<Button variant="outline">
 				<template #prefix>
 					<Home class="h-4 w-4 stroke-1.5" />
 				</template>
 				{{ __('Go to Desk') }}
 			</Button>
-		</router-link>
-		<router-link
-			v-if="user.data?.is_moderator"
-			:to="{
-				name: 'CourseForm',
-				params: { courseName: 'new' },
-			}"
-		>
-			<Button variant="solid" class="mr-2">
+		</a>
+
+		<router-link :to="{ name: 'CourseForm', params: { courseName: 'new' } }">
+			<Button variant="solid">
 				<template #prefix>
 					<Plus class="h-4 w-4 stroke-1.5" />
 				</template>
 				{{ __('New') }}
 			</Button>
 		</router-link>
+	</div>
 	</header>
 	<div class="p-5 pb-10">
 		<div
