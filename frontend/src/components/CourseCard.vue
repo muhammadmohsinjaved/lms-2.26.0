@@ -41,20 +41,20 @@
 				<div v-if="course.enrollments">
 					<Tooltip :text="__('Enrolled Students')">
 						<span class="flex items-center text-ink-gray-7">
-							<Users class="h-4 w-4 stroke-1. mr-1" />
-							{{ course.enrollments }}
+						<Users class="h-4 w-4 stroke-1 mr-1" />
+						{{ course.enrollments }}
 						</span>
 					</Tooltip>
-				</div>
-			<div v-if="course.rating">
-				<Tooltip :text="__('Average Rating')">
-								<span class="flex items-center text-ink-gray-7">
-					<Star :class="['h-4 w-4 mr-1', course.rating ? 'text-yellow-500' : 'text-black']" />
-					<span v-if="course.rating">{{ course.rating }}</span>
-					</span>
-				</Tooltip>
-				</Tooltip>
-			</div>
+					</div>
+
+					<div v-if="course.rating">
+					<Tooltip :text="__('Average Rating')">
+						<span class="flex items-center text-ink-gray-7">
+						<Star :class="['h-4 w-4 mr-1', course.rating ? 'text-yellow-500' : 'text-black']" />
+						<span>{{ course.rating }}</span>
+						</span>
+					</Tooltip>
+					</div>
 
 				<div v-if="course.status != 'Approved'">
 					<Badge
