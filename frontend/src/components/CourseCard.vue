@@ -46,14 +46,14 @@
 						</span>
 					</Tooltip>
 				</div>
-				<div v-if="course.rating">
-					<Tooltip :text="__('Average Rating')">
-						<span class="flex items-center text-ink-gray-7">
-							<Star class="h-4 w-4 fill-yellow-500 stroke-yellow-500 mr-1" />
-							{{ course.rating }}
-						</span>
-					</Tooltip>
-				</div>
+			<div v-if="course.rating">
+				<Tooltip :text="__('Average Rating')">
+					<span class="flex items-center text-ink-gray-7">
+					<Star class="h-4 w-4 text-yellow-500" /> <!-- Only use text-yellow-500 -->
+					{{ course.rating }}
+					</span>
+				</Tooltip>
+			</div>
 
 				<div v-if="course.status != 'Approved'">
 					<Badge
