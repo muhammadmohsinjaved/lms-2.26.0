@@ -46,11 +46,10 @@
 						</span>
 					</Tooltip>
 				</div>
-
 				<div v-if="course.rating">
 					<Tooltip :text="__('Average Rating')">
 						<span class="flex items-center text-ink-gray-7">
-							<Star class="h-4 w-4 stroke-1.5 mr-1" />
+							<Star class="h-4 w-4 fill-yellow-500 stroke-yellow-500 mr-1" />
 							{{ course.rating }}
 						</span>
 					</Tooltip>
