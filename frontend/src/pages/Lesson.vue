@@ -18,6 +18,7 @@
 						)
 					}}
 				</p>
+				
 				<Button v-else @click="redirectToLogin()">
 					{{ __('Login') }}
 				</Button>
