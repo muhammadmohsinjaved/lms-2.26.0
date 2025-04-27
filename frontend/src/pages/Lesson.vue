@@ -18,9 +18,10 @@
 						)
 					}}
 				</p>
-				<Button v-if="user.data" @click="enrollStudent()" variant="solid">
+				<Button v-if="user.data" @click="alert('Contact the Administrator to enroll for this course.')" variant="solid">
 					{{ __('Start Learning') }}
 				</Button>
+
 				<Button v-else @click="redirectToLogin()">
 					{{ __('Login') }}
 				</Button>
