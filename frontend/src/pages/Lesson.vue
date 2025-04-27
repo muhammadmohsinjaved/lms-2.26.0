@@ -18,10 +18,6 @@
 						)
 					}}
 				</p>
-				
-				<Button v-else @click="redirectToLogin()">
-					{{ __('Login') }}
-				</Button>
 			</div>
 			<div v-else class="border-r container pt-5 pb-10 px-5">
 				<div class="flex flex-col md:flex-row md:items-center justify-between">
